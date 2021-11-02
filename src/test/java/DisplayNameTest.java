@@ -10,10 +10,10 @@ public class DisplayNameTest {
 
     @Test
     public void inputDisplay(){
-        String numeroObj = " _ " + " _ " + " _ " + "   " + "   " + " _ " + " _ " + " _ " + "   " +
-                "|_|" + "|_|" + " _|" + "|_|" + "|_|" + "  |" + "|_ " + "  |" + "|_|" +
-                " _|" + " _|" + " _|" + "  |" + "  |" + "  |" + "|_|" + "  |" + "  |" +
-                "                           ";
+        String numeroObj = " _  _  _        _  _  _    " +
+                           "|_||_| _||_||_|  ||_   ||_|" +
+                           " _| _| _|  |  |  ||_|  |  |" +
+                           "                           ";
         final DisplayName dn = new DisplayName(numeroObj);
         final String obtido = dn.getconverter();
         final String espearado = "993447674";
