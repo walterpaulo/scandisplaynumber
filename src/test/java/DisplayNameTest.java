@@ -10,13 +10,13 @@ public class DisplayNameTest {
 
     @Test
     public void inputDisplay(){
-        final String instance = "   _  _     _  _  _  _  _ " +
-                                " | _| _||_||_ |_   ||_||_|" +
-                                " ||_  _|  | _||_|  ||_| _|" +
-                                "                           ";
-        final DisplayName dn = new DisplayName(instance);
-        final String obtido = dn.getNameDisplay();
-        final int espearado = 123456789;
+        String numeroObj = " _ " + " _ " + " _ " + "   " + "   " + " _ " + " _ " + " _ " + "   " +
+                "|_|" + "|_|" + " _|" + "|_|" + "|_|" + "  |" + "|_ " + "  |" + "|_|" +
+                " _|" + " _|" + " _|" + "  |" + "  |" + "  |" + "|_|" + "  |" + "  |" +
+                "                           ";
+        final DisplayName dn = new DisplayName(numeroObj);
+        final String obtido = dn.getconverter();
+        final String espearado = "993447674";
         assertEquals(espearado,obtido);
     }
 }

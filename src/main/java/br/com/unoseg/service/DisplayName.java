@@ -21,7 +21,7 @@ public class DisplayName {
         this.nameDisplay = nameDisplay;
     }
 
-    public static String converter(String nameDisplay){
+    public String getconverter(){
         final String um = "   " +
                 "  |" +
                 "  |" +
@@ -66,7 +66,7 @@ public class DisplayName {
         numeros = Arrays.asList(zero,um,dois,tres,quatro,cinco,seis,sete,oito,nove);
         String number = "";
         String[] d = {"","","","","","","","",""};
-        String[] objQ = nameDisplay.split("");
+        String[] objQ = getNameDisplay().split("");
 //        System.out.println(objQ.length);
         int coluna = 0;
         int digito = 0;
@@ -106,17 +106,4 @@ public class DisplayName {
    return number;
     }
 
-    public static void main(String[] args) {
-        String obNumber = " _ " + " _ " + " _ " + "   " + " _ " + " _ " + " _ " + " _ " + " _ " +
-                "| |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
-                "|_|" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_|" + " _|" +
-                "                           ";
-
-        String teste1 = " _ " + " _ " + " _ " + "   " + "   " + " _ " + " _ " + " _ " + "   " +
-                        "|_|" + "|_|" + " _|" + "|_|" + "|_|" + "  |" + "|_ " + "  |" + "|_|" +
-                        " _|" + " _|" + " _|" + "  |" + "  |" + "  |" + "|_|" + "  |" + "  |" +
-                       "                           ";
-        System.out.println(converter(obNumber));
-        System.out.println(converter(teste1));
-    }
 }
