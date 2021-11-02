@@ -17,7 +17,7 @@ A máquina escaneia os papéis e produz um arquivo com um conjunto de entradas n
 
 
 - --
-####1° Requisito
+#### 1° Requisito
 Entrada:
 ```
  " _  _  _        _  _  _    "
