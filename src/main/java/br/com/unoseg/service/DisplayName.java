@@ -1,5 +1,6 @@
 package br.com.unoseg.service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -7,7 +8,6 @@ import java.util.List;
 
 public class DisplayName {
     private String nameDisplay;
-    private int number;
 
     public DisplayName(String nameDisplay) {
         this.nameDisplay = nameDisplay;
@@ -21,7 +21,7 @@ public class DisplayName {
         this.nameDisplay = nameDisplay;
     }
 
-    public void converter(String nameDisplay){
+    public static String converter(String nameDisplay){
         final String um = "   " +
                 "  |" +
                 "  |" +
@@ -42,7 +42,7 @@ public class DisplayName {
                 "|_ " +
                 " _|" +
                 "   ";
-        final String seis = "   " +
+        final String seis = " _ " +
                 "|_ " +
                 "|_|" +
                 "   ";
@@ -63,23 +63,23 @@ public class DisplayName {
                 "|_|" +
                 "   ";
         List<String> numeros = new ArrayList<>();
-        numeros = Arrays.asList(um,dois,tres,quatro,cinco,seis,sete,oito,nove);
-
-        int coluna = 0;
-        int digito = 0;
+        numeros = Arrays.asList(zero,um,dois,tres,quatro,cinco,seis,sete,oito,nove);
+        String number = "";
         String[] d = {"","","","","","","","",""};
         String[] objQ = nameDisplay.split("");
-        System.out.println(objQ.length);
+//        System.out.println(objQ.length);
+        int coluna = 0;
+        int digito = 0;
 
         for (int i = 0; i < objQ.length; i++) {
             if (coluna <= 1){
                 if (digito > 8){
                     System.out.println();
                     digito = 0;
-                    System.out.print(i+" <-"+digito+"G ");
+//                  System.out.print(i+" <-"+digito+"G ");
                     d[digito] += objQ[i];
                 }else {
-                    System.out.print(i+" <-"+digito+"G ");
+//                  System.out.print(i+" <-"+digito+"G ");
                     d[digito] += objQ[i];
                 }
                 coluna ++;
@@ -87,28 +87,36 @@ public class DisplayName {
                 if (digito > 8){
                     digito = 0;
                 }
-                System.out.print(i+" <-"+digito+"G ");
+//              System.out.print(i+" <-"+digito+"G ");
                 d[digito] += objQ[i];
                 coluna = 0;
                 digito ++;
-
             }
         }
+
         for (int i = 0; i < d.length; i++) {
-            System.out.println("Digito "+ i+1+":");
-            for (String numero : numeros){
-                if(d[i].equals(numero)){
-                    System.out.println(numero);
+            for (int j = 0; j < numeros.size(); j++){
+                int oi =j;
+                if(d[i].equals(numeros.get(j))){
+                    number += j;
                 }
             }
+
         }
+   return number;
     }
 
     public static void main(String[] args) {
-
-        String obNumber = "   " + " _ " + " _ " + "   " + " _ " + " _ " + " _ " + " _ " + " _ " +
-                "  |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
-                "  |" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_|" + "  |" +
+        String obNumber = " _ " + " _ " + " _ " + "   " + " _ " + " _ " + " _ " + " _ " + " _ " +
+                "| |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
+                "|_|" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_|" + " _|" +
                 "                           ";
+
+        String teste1 = " _ " + " _ " + " _ " + "   " + "   " + " _ " + " _ " + " _ " + "   " +
+                        "|_|" + "|_|" + " _|" + "|_|" + "|_|" + "  |" + "|_ " + "  |" + "|_|" +
+                        " _|" + " _|" + " _|" + "  |" + "  |" + "  |" + "|_|" + "  |" + "  |" +
+                       "                           ";
+        System.out.println(converter(obNumber));
+        System.out.println(converter(teste1));
     }
 }

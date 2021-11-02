@@ -13,7 +13,7 @@ public class DisplayNameTest {
         final String instance = "   _  _     _  _  _  _  _ " +
                                 " | _| _||_||_ |_   ||_||_|" +
                                 " ||_  _|  | _||_|  ||_| _|" +
-                                "";
+                                "                           ";
         final DisplayName dn = new DisplayName(instance);
         final String obtido = dn.getNameDisplay();
         final int espearado = 123456789;
