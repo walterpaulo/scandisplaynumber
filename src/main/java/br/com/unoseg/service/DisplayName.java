@@ -3,6 +3,7 @@ package br.com.unoseg.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class DisplayName {
     private String nameDisplay;
@@ -47,13 +48,35 @@ public class DisplayName {
             }
         }
         for (int i = 0; i < d.length; i++) {
-
             for (int j = 0; j < digitosDisplay().size(); j++){
                 if(d[i].equals(digitosDisplay().get(j))){
                     number += j;
                     restValidacao += j*(cont);
                     cont--;
+                }else {
+                    int numeroAcerto = 0;
+                    String[] dig = d[i].split("");
+                    for (int k = 0; k < digitosDisplay().size(); k++) {
+                        String[] digOb = digitosDisplay().get(k).split("");
+//                        System.out.println(k+" - "+digOb.length+" caracteres.");
+                        int stop = 12;
+                        numeroAcerto =0;
+                        for (int l = 0; l < stop; l++) {
+                            if (digOb[l].equals(dig[l])) {
+                                numeroAcerto++;
+                            }
+                            if (numeroAcerto == 10){
+                                    System.out.println(k + " - " + digOb.length + " caracteres." + "Acerto: " + numeroAcerto);
+                                    l = 12;
+                                    stop = 12;
+                                    k = 12;
+                                }
+
+
+                        }
+                    }
                 }
+
             }
         }
         if (restValidacao % 11 == 0) {
@@ -107,5 +130,6 @@ public class DisplayName {
         numeros = Arrays.asList(zero,um,dois,tres,quatro,cinco,seis,sete,oito,nove);
         return numeros;
     }
+
 
 }
