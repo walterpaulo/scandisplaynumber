@@ -9,23 +9,23 @@ import static junit.framework.TestCase.assertEquals;
 public class DisplayNameTest {
 
     @Test
-    public void inputDisplay_Error(){
+    public void inputDisplay_ERR(){
         String numeroError = " _  _  _        _  _  _    " +
                 "|_||_| _||_||_|  ||_   ||_|" +
                 " _| _| _|  |  |  ||_|  |  |" +
                 "                           ";
         final DisplayName dn = new DisplayName(numeroError);
         final String obtido = dn.getconverter();
-        final String espearado = "Número inválido!";
+        final String espearado = "993447674 ERR";
         assertEquals(espearado,obtido);
     }
 
     @Test
     public void inputDisplay_Test1(){
         String numeroObj2 = " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + " _ " +
-                            "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" +
-                            "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" +
-                            "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
+                "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" +
+                "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" +
+                "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
 
         final DisplayName dn = new DisplayName(numeroObj2);
         final String obtido = dn.getconverter();
@@ -36,9 +36,9 @@ public class DisplayNameTest {
     @Test
     public void inputDisplay_Test3(){
         String numeroObj3 = " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + " _ " + "   " +
-                            "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "|_ " + "  |" +
-                            "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + " _|" + "  |" +
-                            "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
+                "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "| |" + "|_ " + "  |" +
+                "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + "|_|" + " _|" + "  |" +
+                "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
 
         final DisplayName dn = new DisplayName(numeroObj3);
         final String obtido = dn.getconverter();
@@ -50,13 +50,13 @@ public class DisplayNameTest {
     public void inputDisplay(){
 
         String numeroObj2 = "   " + " _ " + " _ " + "   " + " _ " + " _ " + " _ " + " _ " + " _ " +
-                            "  |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
-                            "  |" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_|" + " _|" +
-                            "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
+                "  |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
+                "  |" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_|" + " _|" +
+                "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
 
         final DisplayName dn = new DisplayName(numeroObj2);
         final String obtido = dn.getconverter();
-        final String espearado = "123456789";
-        assertEquals(espearado,obtido);
+        final String esperado = "123456789";
+        assertEquals(esperado,obtido);
     }
 }

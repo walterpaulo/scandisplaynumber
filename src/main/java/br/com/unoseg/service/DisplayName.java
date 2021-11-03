@@ -59,7 +59,7 @@ public class DisplayName {
         if (restValidacao % 11 == 0) {
             return number;
         }else {
-            return "Número inválido!";
+            return number + " ERR";
         }
     }
     private List<String> digitosDisplay(){
@@ -107,4 +107,5 @@ public class DisplayName {
         numeros = Arrays.asList(zero,um,dois,tres,quatro,cinco,seis,sete,oito,nove);
         return numeros;
     }
+
 }

@@ -23,7 +23,7 @@ A máquina escaneia os papéis e produz um arquivo com um conjunto de entradas n
 - --
 O programa recebe um arquivo de entrada e devolve conta com nove números com algarismos de 0 a 9.
 
-*Entrada:* 
+*Entrada:*
 ```
     _  _     _  _  _  _  _
  |  _| _||_||_ |_   ||_||_|
@@ -57,9 +57,6 @@ _O programa deve validar os números de conta, segue regras:_
 ```
 *Saída:*
 ```
- Número inválido!
+ 993447674 ERR
 ```
-*Erro adaptado.
-
-
-
+*ERR para números inválidos.
