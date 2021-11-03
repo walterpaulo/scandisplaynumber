@@ -1,9 +1,7 @@
 package br.com.unoseg.service;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class DisplayName {
@@ -22,12 +20,13 @@ public class DisplayName {
     }
 
     public String getconverter(){
-
         String number = "";
         String[] d = {"","","","","","","","",""};
         String[] objQ = getNameDisplay().split("");
+        int restValidacao = 0;
         int coluna = 0;
         int digito = 0;
+        int cont = 9;
         for (int i = 0; i < objQ.length; i++) {
             if (coluna <= 1){
                 if (digito > 8){
@@ -48,16 +47,21 @@ public class DisplayName {
             }
         }
         for (int i = 0; i < d.length; i++) {
+
             for (int j = 0; j < digitosDisplay().size(); j++){
-                int oi =j;
                 if(d[i].equals(digitosDisplay().get(j))){
                     number += j;
+                    restValidacao += j*(cont);
+                    cont--;
                 }
             }
         }
-   return number;
+        if (restValidacao % 11 == 0) {
+            return number;
+        }else {
+            return "Número inválido!";
+        }
     }
-
     private List<String> digitosDisplay(){
         final String um = "   " +
                 "  |" +
@@ -103,5 +107,4 @@ public class DisplayName {
         numeros = Arrays.asList(zero,um,dois,tres,quatro,cinco,seis,sete,oito,nove);
         return numeros;
     }
-
 }
