@@ -1,8 +1,13 @@
 package br.com.unoseg.service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class DisplayName {
@@ -31,7 +36,7 @@ public class DisplayName {
         for (int i = 0; i < objQ.length; i++) {
             if (coluna <= 1){
                 if (digito > 8){
-                    System.out.println();
+//                    System.out.println();
                     digito = 0;
                     d[digito] += objQ[i];
                 }else {
@@ -39,47 +44,35 @@ public class DisplayName {
                 }
                 coluna ++;
             }else {
-                if (digito > 8){
-                    digito = 0;
-                }
+//                if (digito > 8){
+//                    digito = 0;
+//                }
                 d[digito] += objQ[i];
                 coluna = 0;
                 digito ++;
             }
         }
+        boolean achei = true;
         for (int i = 0; i < d.length; i++) {
+            if(!achei) {
+                number += "?";
+            }
+            achei = false;
             for (int j = 0; j < digitosDisplay().size(); j++){
+                Consumer<Boolean> pp = x -> System.out.print(x);
+                Comparator<Boolean> comparator = (s, t1) -> s.compareTo(t1);
+
                 if(d[i].equals(digitosDisplay().get(j))){
+                    achei = true;
                     number += j;
                     restValidacao += j*(cont);
                     cont--;
-                }else {
-                    int numeroAcerto = 0;
-                    String[] dig = d[i].split("");
-                    for (int k = 0; k < digitosDisplay().size(); k++) {
-                        String[] digOb = digitosDisplay().get(k).split("");
-//                        System.out.println(k+" - "+digOb.length+" caracteres.");
-                        int stop = 12;
-                        numeroAcerto =0;
-                        for (int l = 0; l < stop; l++) {
-                            if (digOb[l].equals(dig[l])) {
-                                numeroAcerto++;
-                            }
-                            if (numeroAcerto == 10){
-                                    System.out.println(k + " - " + digOb.length + " caracteres." + "Acerto: " + numeroAcerto);
-                                    l = 12;
-                                    stop = 12;
-                                    k = 12;
-                                }
-
-
-                        }
-                    }
                 }
-
             }
         }
-        if (restValidacao % 11 == 0) {
+        if (number.contains("?")) {
+            return number + " ILL";
+        }else if (restValidacao % 11 == 0){
             return number;
         }else {
             return number + " ERR";

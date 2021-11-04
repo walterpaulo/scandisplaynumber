@@ -59,4 +59,18 @@ public class DisplayNameTest {
         final String esperado = "123456789";
         assertEquals(esperado,obtido);
     }
+
+    @Test
+    public void inputDisplay_Test4(){
+        String numeroObj4 = "   " + " _ " + " _ " + "   " + " _ " + " _ " + " _ " + " _ " + " _ " +
+                "  |" + " _|" + " _|" + "|_|" + "|_ " + "|_ " + "  |" + "|_|" + "|_|" +
+                "  |" + "|_ " + " _|" + "  |" + " _|" + "|_|" + "  |" + "|_ " + " _|" +
+                "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   " + "   ";
+
+        final DisplayName dn = new DisplayName(numeroObj4);
+        final String obtido = dn.getconverter();
+        final String espearado = "123456789";
+        assertEquals(espearado,obtido);
+    }
+
 }
