@@ -1,14 +1,10 @@
 package br.com.unoseg.service;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class DisplayName {
     private String nameDisplay;
@@ -54,9 +50,7 @@ public class DisplayName {
         }
         boolean achei = true;
         for (int i = 0; i < d.length; i++) {
-            if(!achei) {
-                number += "?";
-            }
+
             achei = false;
             for (int j = 0; j < digitosDisplay().size(); j++){
                 Consumer<Boolean> pp = x -> System.out.print(x);
@@ -68,6 +62,9 @@ public class DisplayName {
                     restValidacao += j*(cont);
                     cont--;
                 }
+            }
+            if(!achei) {
+                number += "?";
             }
         }
         if (number.contains("?")) {

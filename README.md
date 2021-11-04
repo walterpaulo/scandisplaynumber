@@ -9,7 +9,7 @@ A máquina escaneia os papéis e produz um arquivo com um conjunto de entradas n
 
 ```
 
-*Display:*
+**Display:**
 * 4 linhas;
 * cada linha com 27 caracteres;
 * as 3 linhas contêm um número de conta, formado por pipes "|" e underscores "_";
@@ -23,14 +23,14 @@ A máquina escaneia os papéis e produz um arquivo com um conjunto de entradas n
 - --
 O programa recebe um arquivo de entrada e devolve conta com nove números com algarismos de 0 a 9.
 
-*Entrada:*
+**Entrada:**
 ```
     _  _     _  _  _  _  _
  |  _| _||_||_ |_   ||_||_|
  | |_  _|  | _||_|  ||_| _|
 
 ```
-*Saída:*
+**Saída:**
 ```
  123456789
 ```
@@ -48,15 +48,110 @@ _O programa deve validar os números de conta, segue regras:_
 ```  
 
 
-*Entrada:*
+**Entrada:**
 ```
    _  _  _        _  _  _    
   |_||_| _||_||_|  ||_   ||_|
    _| _| _|  |  |  ||_|  |  |
                              
 ```
-*Saída:*
+**Saída:**
 ```
  993447674 ERR
 ```
-*ERR para números inválidos.
+
+
+Tabela de erros
+
+ | TIPO | DESCRIÇÃO|
+ |------|-------------------|
+ | ERR | números inválidos |
+ | ILL  |números com dígitos ilegíveis|
+### Exemplos de casos de teste:
+
+
+### Teste 1:
+- --
+**Entrada:**
+```
+ _  _  _  _  _  _  _  _  _ 
+| || || || || || || || || |
+|_||_||_||_||_||_||_||_||_|
+                             
+```
+**Saída:**
+
+```
+ 000000000
+```
+
+
+### Teste 2:
+- --
+**Entrada:**
+```
+    _  _     _  _  _  _  _
+  | _| _||_||_ |_   ||_||_|
+  ||_  _|  | _||_|  ||_| _|
+                             
+```
+**Saída:**
+```
+ 123456789
+```
+
+### Teste 3:
+- --
+**Entrada:**
+```
+ _  _  _  _  _  _  _  _    
+| || || || || || || ||_   |
+|_||_||_||_||_||_||_| _|  |
+                             
+```
+**Saída:**
+```
+ 000000051
+```
+
+### Teste 4:
+- --
+**Entrada:**
+```
+    _  _     _  _  _  _  _ 
+  | _| _||_| _ |_   ||_||_|
+  ||_  _|  | _||_|  ||_| _ 
+                             
+```
+**Saída:**
+```
+ 1234?678? ILL
+```
+
+### Teste 5:
+- --
+**Entrada:**
+```
+                    
+|_||_||_||_||_||_||_||_||_|
+  |  |  |  |  |  |  |  |  |
+                          
+```
+**Saída:**
+```
+444444444 ERR
+```
+
+### Teste 6:
+- --
+**Entrada:**
+```
+ _  _  _  _  _  _  _  _  _ 
+  |  |  |  |  |  |  |  |  |
+  |  |  |  |  |  |  |  |  |
+                          
+```
+**Saída:**
+```
+777777177 
+```
