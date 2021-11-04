@@ -47,6 +47,10 @@ _O programa deve validar os números de conta, segue regras:_
   (d1 + 2*d2 + 3*d3 + 4*d4 + ... + 9*d9) mod 11 = 0
 ```  
 
+### 3° Requisito
+O arquivo de saída possui um número de conta por linha.
+Se algum caractere está ilegível, ele é substituído por "?" e uma segunda coluna
+indica o tipo de erro (Tabela de erros).
 
 **Entrada:**
 ```
@@ -142,16 +146,4 @@ Tabela de erros
 444444444 ERR
 ```
 
-### Teste 6:
-- --
-**Entrada:**
-```
- _  _  _  _  _  _  _  _  _ 
-  |  |  |  |  |  |  |  |  |
-  |  |  |  |  |  |  |  |  |
-                          
-```
-**Saída:**
-```
-777777177 
-```
+
