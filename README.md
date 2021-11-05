@@ -18,6 +18,11 @@ A máquina escaneia os papéis e produz um arquivo com um conjunto de entradas n
 * possui cerca de 500 entradas.
 
 
+### Requerimentos/Conhecimentos e Tecnologias utilizadas
+
+* ![Java](https://img.shields.io/badge/Java-11-blue)
+* ![Maven](https://img.shields.io/badge/Maven-4.0.0-blue)
+* ![JUnit](https://img.shields.io/badge/JUnit-4.13.2-red)
 
 ### 1° Requisito
 - --
@@ -71,8 +76,12 @@ Tabela de erros
  |------|-------------------|
  | ERR | números inválidos |
  | ILL  |números com dígitos ilegíveis|
-### Exemplos de casos de teste:
+### Exemplos de casos de teste, TDD com JUnit: 
 
+[DisplayNmeTest.java](src/test/java/DisplayNameTest.java)
+
+
+Compara os dados de entreda e saida. Utilizado 
 
 ### Teste 1:
 - --
